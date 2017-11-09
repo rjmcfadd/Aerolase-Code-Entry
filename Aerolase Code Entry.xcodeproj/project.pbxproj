@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9492EAE61FB4DA4700170A59 /* CodeTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAE51FB4DA4700170A59 /* CodeTxtField.swift */; };
 		949AB5DF1FAB667E00C87302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5DE1FAB667E00C87302 /* AppDelegate.swift */; };
-		949AB5E11FAB667E00C87302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5E01FAB667E00C87302 /* ViewController.swift */; };
+		949AB5E11FAB667E00C87302 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5E01FAB667E00C87302 /* MainVC.swift */; };
 		949AB5E41FAB667E00C87302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E21FAB667E00C87302 /* Main.storyboard */; };
 		949AB5E61FAB667E00C87302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E51FAB667E00C87302 /* Assets.xcassets */; };
 		949AB5E91FAB667E00C87302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E71FAB667E00C87302 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9492EAE51FB4DA4700170A59 /* CodeTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTxtField.swift; sourceTree = "<group>"; };
 		949AB5DB1FAB667E00C87302 /* Aerolase Code Entry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerolase Code Entry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949AB5DE1FAB667E00C87302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		949AB5E01FAB667E00C87302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		949AB5E01FAB667E00C87302 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		949AB5E31FAB667E00C87302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		949AB5E51FAB667E00C87302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		949AB5E81FAB667E00C87302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9492EAE31FB4C28A00170A59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				949AB5E01FAB667E00C87302 /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9492EAE41FB4DA0500170A59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9492EAE51FB4DA4700170A59 /* CodeTxtField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		949AB5D21FAB667E00C87302 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +72,9 @@
 		949AB5DD1FAB667E00C87302 /* Aerolase Code Entry */ = {
 			isa = PBXGroup;
 			children = (
+				9492EAE41FB4DA0500170A59 /* Views */,
+				9492EAE31FB4C28A00170A59 /* Controller */,
 				949AB5DE1FAB667E00C87302 /* AppDelegate.swift */,
-				949AB5E01FAB667E00C87302 /* ViewController.swift */,
 				949AB5E21FAB667E00C87302 /* Main.storyboard */,
 				949AB5E51FAB667E00C87302 /* Assets.xcassets */,
 				949AB5E71FAB667E00C87302 /* LaunchScreen.storyboard */,
@@ -136,8 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				949AB5E11FAB667E00C87302 /* ViewController.swift in Sources */,
+				949AB5E11FAB667E00C87302 /* MainVC.swift in Sources */,
 				949AB5DF1FAB667E00C87302 /* AppDelegate.swift in Sources */,
+				9492EAE61FB4DA4700170A59 /* CodeTxtField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
