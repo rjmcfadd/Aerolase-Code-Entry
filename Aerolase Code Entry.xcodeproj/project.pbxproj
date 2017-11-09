@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9492EAE61FB4DA4700170A59 /* CodeTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAE51FB4DA4700170A59 /* CodeTxtField.swift */; };
+		9492EAEE1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAED1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift */; };
+		9492EAF71FB4F6EA00170A59 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAF61FB4F6EA00170A59 /* Code.swift */; };
+		9492EAF81FB4F8DF00170A59 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAF61FB4F6EA00170A59 /* Code.swift */; };
 		949AB5DF1FAB667E00C87302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5DE1FAB667E00C87302 /* AppDelegate.swift */; };
 		949AB5E11FAB667E00C87302 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5E01FAB667E00C87302 /* MainVC.swift */; };
 		949AB5E41FAB667E00C87302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E21FAB667E00C87302 /* Main.storyboard */; };
@@ -15,8 +18,22 @@
 		949AB5E91FAB667E00C87302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E71FAB667E00C87302 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9492EAF01FB4F6A800170A59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 949AB5D31FAB667E00C87302 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 949AB5DA1FAB667E00C87302;
+			remoteInfo = "Aerolase Code Entry";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9492EAE51FB4DA4700170A59 /* CodeTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTxtField.swift; sourceTree = "<group>"; };
+		9492EAEB1FB4F6A800170A59 /* Aerolase Code EntryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aerolase Code EntryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9492EAED1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aerolase_Code_EntryTests.swift; sourceTree = "<group>"; };
+		9492EAEF1FB4F6A800170A59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9492EAF61FB4F6EA00170A59 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 		949AB5DB1FAB667E00C87302 /* Aerolase Code Entry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerolase Code Entry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949AB5DE1FAB667E00C87302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		949AB5E01FAB667E00C87302 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -27,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9492EAE81FB4F6A800170A59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		949AB5D81FAB667E00C87302 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +77,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9492EAEC1FB4F6A800170A59 /* Aerolase Code EntryTests */ = {
+			isa = PBXGroup;
+			children = (
+				9492EAED1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift */,
+				9492EAEF1FB4F6A800170A59 /* Info.plist */,
+			);
+			path = "Aerolase Code EntryTests";
+			sourceTree = "<group>";
+		};
+		9492EAF51FB4F6B700170A59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9492EAF61FB4F6EA00170A59 /* Code.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		949AB5D21FAB667E00C87302 = {
 			isa = PBXGroup;
 			children = (
 				949AB5DD1FAB667E00C87302 /* Aerolase Code Entry */,
+				9492EAEC1FB4F6A800170A59 /* Aerolase Code EntryTests */,
 				949AB5DC1FAB667E00C87302 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				949AB5DB1FAB667E00C87302 /* Aerolase Code Entry.app */,
+				9492EAEB1FB4F6A800170A59 /* Aerolase Code EntryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +115,7 @@
 		949AB5DD1FAB667E00C87302 /* Aerolase Code Entry */ = {
 			isa = PBXGroup;
 			children = (
+				9492EAF51FB4F6B700170A59 /* Model */,
 				9492EAE41FB4DA0500170A59 /* Views */,
 				9492EAE31FB4C28A00170A59 /* Controller */,
 				949AB5DE1FAB667E00C87302 /* AppDelegate.swift */,
@@ -86,6 +130,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9492EAEA1FB4F6A800170A59 /* Aerolase Code EntryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9492EAF21FB4F6A800170A59 /* Build configuration list for PBXNativeTarget "Aerolase Code EntryTests" */;
+			buildPhases = (
+				9492EAE71FB4F6A800170A59 /* Sources */,
+				9492EAE81FB4F6A800170A59 /* Frameworks */,
+				9492EAE91FB4F6A800170A59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9492EAF11FB4F6A800170A59 /* PBXTargetDependency */,
+			);
+			name = "Aerolase Code EntryTests";
+			productName = "Aerolase Code EntryTests";
+			productReference = 9492EAEB1FB4F6A800170A59 /* Aerolase Code EntryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		949AB5DA1FAB667E00C87302 /* Aerolase Code Entry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 949AB5ED1FAB667E00C87302 /* Build configuration list for PBXNativeTarget "Aerolase Code Entry" */;
@@ -109,10 +171,15 @@
 		949AB5D31FAB667E00C87302 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ryan McFadden";
 				TargetAttributes = {
+					9492EAEA1FB4F6A800170A59 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 949AB5DA1FAB667E00C87302;
+					};
 					949AB5DA1FAB667E00C87302 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -133,11 +200,19 @@
 			projectRoot = "";
 			targets = (
 				949AB5DA1FAB667E00C87302 /* Aerolase Code Entry */,
+				9492EAEA1FB4F6A800170A59 /* Aerolase Code EntryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9492EAE91FB4F6A800170A59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		949AB5D91FAB667E00C87302 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,10 +226,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9492EAE71FB4F6A800170A59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9492EAF81FB4F8DF00170A59 /* Code.swift in Sources */,
+				9492EAEE1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		949AB5D71FAB667E00C87302 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9492EAF71FB4F6EA00170A59 /* Code.swift in Sources */,
 				949AB5E11FAB667E00C87302 /* MainVC.swift in Sources */,
 				949AB5DF1FAB667E00C87302 /* AppDelegate.swift in Sources */,
 				9492EAE61FB4DA4700170A59 /* CodeTxtField.swift in Sources */,
@@ -162,6 +247,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9492EAF11FB4F6A800170A59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 949AB5DA1FAB667E00C87302 /* Aerolase Code Entry */;
+			targetProxy = 9492EAF01FB4F6A800170A59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		949AB5E21FAB667E00C87302 /* Main.storyboard */ = {
@@ -183,6 +276,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9492EAF31FB4F6A800170A59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQWGFWD623;
+				INFOPLIST_FILE = "Aerolase Code EntryTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmApps.Aerolase-Code-EntryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerolase Code Entry.app/Aerolase Code Entry";
+			};
+			name = Debug;
+		};
+		9492EAF41FB4F6A800170A59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQWGFWD623;
+				INFOPLIST_FILE = "Aerolase Code EntryTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmApps.Aerolase-Code-EntryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aerolase Code Entry.app/Aerolase Code Entry";
+			};
+			name = Release;
+		};
 		949AB5EB1FAB667E00C87302 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -325,6 +452,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9492EAF21FB4F6A800170A59 /* Build configuration list for PBXNativeTarget "Aerolase Code EntryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9492EAF31FB4F6A800170A59 /* Debug */,
+				9492EAF41FB4F6A800170A59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		949AB5D61FAB667E00C87302 /* Build configuration list for PBXProject "Aerolase Code Entry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

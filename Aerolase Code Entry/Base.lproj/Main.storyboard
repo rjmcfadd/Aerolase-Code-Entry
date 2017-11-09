@@ -5,8 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,23 +47,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2Q-cZ-eHG">
-                                <rect key="frame" x="116.66666666666667" y="521" width="142.33333333333331" height="27.333333333333371"/>
+                                <rect key="frame" x="16" y="521" width="343" height="27"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-ps-N0C">
-                                <rect key="frame" x="60" y="668" width="255" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.31153432330000003" blue="0.05809331215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="e7C-vX-Gc9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
-                                <state key="normal" title="Generate Response Code">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Clear Request Code">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="genBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9b2-ET-E6L"/>
+                                    <action selector="clearCodePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMe-5n-Uca"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Request Code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lGu-w4-Wpa" customClass="CodeTxtField" customModule="Aerolase_Code_Entry" customModuleProvider="target">
@@ -73,7 +72,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-x3-5Wt">
                                 <rect key="frame" x="0.0" y="441" width="375" height="75"/>
@@ -96,7 +95,8 @@
                             <accessibilityTraits key="traits" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Wt2-ps-N0C" secondAttribute="trailing" constant="60" id="5tP-46-juR"/>
+                            <constraint firstItem="J2Q-cZ-eHG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1jY-SR-9qF"/>
+                            <constraint firstAttribute="trailing" secondItem="Wt2-ps-N0C" secondAttribute="trailing" id="5tP-46-juR"/>
                             <constraint firstAttribute="trailing" secondItem="Qhf-Tz-YNA" secondAttribute="trailing" id="6K2-cD-LAd"/>
                             <constraint firstItem="AVq-x3-5Wt" firstAttribute="top" secondItem="lGu-w4-Wpa" secondAttribute="bottom" constant="50" id="6xc-3f-gmD"/>
                             <constraint firstItem="J2Q-cZ-eHG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWo-dW-W6C"/>
@@ -106,11 +106,12 @@
                             <constraint firstItem="lGu-w4-Wpa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="65" id="Jy0-d0-VRT"/>
                             <constraint firstItem="8Pz-kF-cqK" firstAttribute="top" secondItem="R0E-M5-Dnf" secondAttribute="bottom" constant="17" id="Kc4-h3-UdP"/>
                             <constraint firstItem="ccr-gb-yCE" firstAttribute="top" secondItem="hTg-1P-XJ8" secondAttribute="bottom" constant="5" id="Kmd-EC-nyv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J2Q-cZ-eHG" secondAttribute="trailing" id="Lhw-Vq-9Bp"/>
                             <constraint firstAttribute="trailing" secondItem="8Pz-kF-cqK" secondAttribute="trailing" constant="30" id="M0P-s6-Sbz"/>
-                            <constraint firstItem="BlJ-vf-cG2" firstAttribute="top" secondItem="Wt2-ps-N0C" secondAttribute="bottom" constant="50" id="M6F-sR-78T"/>
+                            <constraint firstItem="BlJ-vf-cG2" firstAttribute="top" secondItem="Wt2-ps-N0C" secondAttribute="bottom" id="M6F-sR-78T"/>
                             <constraint firstItem="R0E-M5-Dnf" firstAttribute="top" secondItem="ccr-gb-yCE" secondAttribute="bottom" constant="15" id="OBd-bM-zHT"/>
                             <constraint firstItem="lGu-w4-Wpa" firstAttribute="top" secondItem="8Pz-kF-cqK" secondAttribute="bottom" constant="20" id="P0p-Ki-eUm"/>
-                            <constraint firstItem="Wt2-ps-N0C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="TD5-u5-UPd"/>
+                            <constraint firstItem="Wt2-ps-N0C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TD5-u5-UPd"/>
                             <constraint firstItem="Wt2-ps-N0C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WKJ-l6-HjT"/>
                             <constraint firstItem="J2Q-cZ-eHG" firstAttribute="top" secondItem="AVq-x3-5Wt" secondAttribute="bottom" constant="5" id="Yz4-0u-Pqz"/>
                             <constraint firstItem="AVq-x3-5Wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z0p-81-ABc"/>
