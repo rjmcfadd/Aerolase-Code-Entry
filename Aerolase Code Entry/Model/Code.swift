@@ -10,6 +10,9 @@ import Foundation
 
 class Code {
     class func getRequest(forCode request: Int) -> Int {
+        
         return request
     }
+    
+    
 }
