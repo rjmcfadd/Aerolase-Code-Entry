@@ -63,17 +63,19 @@ class MainVC: UIViewController {
                         elements[i] = 2
                     } else if digit == 9 {
                         elements[i] = 1
+                    } else if digit == 0 {
+                        elements[i] = 0
                     }
                     
                 }
                 
                 var codeString = ""
-                _ = elements.map{ codeString = codeString + "\($0)" }
-                let codeInt = Int(codeString)
+                _ = elements.flatMap{ codeString = codeString + "\($0)" }
+//                let codeInt = Int(codeString)
                 view.endEditing(true)
                 responseTxt.isHidden = false
                 responseLbl.isHidden = false
-                responseTxt.text = "\(Code.getRequest(forCode: codeInt!))"
+                responseTxt.text = "\(Code.getRequest(forCode: codeString))"
                 
             }
         }

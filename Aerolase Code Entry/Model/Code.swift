@@ -9,7 +9,7 @@
 import Foundation
 
 class Code {
-    class func getRequest(forCode request: Int) -> Int {
+    class func getRequest(forCode request: String) -> String {
         
         return request
     }
