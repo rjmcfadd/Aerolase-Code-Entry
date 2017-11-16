@@ -8,13 +8,16 @@
 
 import UIKit
 
+
 class MainVC: UIViewController {
 
     @IBOutlet weak var requestTxt: UITextField!
     
-    @IBOutlet weak var responseTxt: UILabel!
+    @IBOutlet weak var responseTxt: SRCopyableLabel!
     
     @IBOutlet weak var responseLbl: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,38 +36,40 @@ class MainVC: UIViewController {
         
         
     }
+
+    
     @objc func generate() {
         if let requestTxt = requestTxt.text {
             
-            if let request = Int(requestTxt) {
-                let newRequest = String(request)
-                var codeArray = newRequest.flatMap{Int(String($0))}
+//            if let request = Int(requestTxt) {
+//                let newRequest = String(request)
+                var codeArray = requestTxt.flatMap{String(String($0))}
                 codeArray.swapAt(3, 1)
                 codeArray.swapAt(3, 2)
                 codeArray.swapAt(4, 3)
                 
                 var elements = codeArray
                 for (i, digit) in elements.enumerated() {
-                    if digit == 1 {
-                        elements[i] = 4
-                    } else if digit == 2 {
-                        elements[i] = 3
-                    } else if digit == 3 {
-                        elements[i] = 2
-                    } else if digit == 4 {
-                        elements[i] = 1
-                    } else if digit == 5 {
-                        elements[i] = 0
-                    } else if digit == 6 {
-                        elements[i] = 4
-                    } else if digit == 7 {
-                        elements[i] = 3
-                    } else if digit == 8 {
-                        elements[i] = 2
-                    } else if digit == 9 {
-                        elements[i] = 1
-                    } else if digit == 0 {
-                        elements[i] = 0
+                    if digit == "1" {
+                        elements[i] = "4"
+                    } else if digit == "2" {
+                        elements[i] = "3"
+                    } else if digit == "3" {
+                        elements[i] = "2"
+                    } else if digit == "4" {
+                        elements[i] = "1"
+                    } else if digit == "5" {
+                        elements[i] = "0"
+                    } else if digit == "6" {
+                        elements[i] = "4"
+                    } else if digit == "7" {
+                        elements[i] = "3"
+                    } else if digit == "8" {
+                        elements[i] = "2"
+                    } else if digit == "9" {
+                        elements[i] = "1"
+                    } else if digit == "0" {
+                        elements[i] = "0"
                     }
                     
                 }
@@ -77,7 +82,7 @@ class MainVC: UIViewController {
                 responseLbl.isHidden = false
                 responseTxt.text = "\(Code.getRequest(forCode: codeString))"
                 
-            }
+//            }
         }
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TuL-lz-yEk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,11 +11,85 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Medium</string>
         </array>
     </customFonts>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="YYJ-Qe-1w7">
+            <objects>
+                <viewController id="TuL-lz-yEk" customClass="LoginViewController" customModule="Aerolase_Code_Entry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k1Z-jL-yAo"/>
+                        <viewControllerLayoutGuide type="bottom" id="qLR-Ls-I5j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o6N-tk-ieu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbackground" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-FF-7BU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U8D-Kn-Au6">
+                                <rect key="frame" x="66" y="104" width="243" height="257"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-EN-T9P">
+                                        <rect key="frame" x="43.666666666666671" y="0.0" width="155.66666666666663" height="82"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuM-dn-zXE" customClass="CodeTxtField" customModule="Aerolase_Code_Entry" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="102" width="143" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-Fr-92Q" customClass="CodeTxtField" customModule="Aerolase_Code_Entry" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="152" width="143" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mK-x3-tfP">
+                                        <rect key="frame" x="50" y="202" width="143" height="55"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="31"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="yC0-kz-hlR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0mK-x3-tfP" secondAttribute="trailing" constant="50" id="CCF-Lc-rea"/>
+                                    <constraint firstItem="0mK-x3-tfP" firstAttribute="leading" secondItem="U8D-Kn-Au6" secondAttribute="leadingMargin" constant="50" id="DZi-7L-8gh"/>
+                                    <constraint firstItem="0mK-x3-tfP" firstAttribute="width" secondItem="TuM-dn-zXE" secondAttribute="width" id="hgQ-Su-Nca"/>
+                                    <constraint firstItem="0mK-x3-tfP" firstAttribute="width" secondItem="eVc-Fr-92Q" secondAttribute="width" id="ubt-ca-15q"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7cC-FF-7BU" secondAttribute="trailing" id="50N-sD-xgf"/>
+                            <constraint firstItem="U8D-Kn-Au6" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leadingMargin" constant="50" id="56t-nH-36t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U8D-Kn-Au6" secondAttribute="trailing" constant="50" id="P6c-mN-86s"/>
+                            <constraint firstItem="U8D-Kn-Au6" firstAttribute="top" secondItem="k1Z-jL-yAo" secondAttribute="bottom" constant="60" id="UVT-Y2-uqZ"/>
+                            <constraint firstItem="7cC-FF-7BU" firstAttribute="top" secondItem="o6N-tk-ieu" secondAttribute="top" id="fEJ-Ki-Sn2"/>
+                            <constraint firstItem="7cC-FF-7BU" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leading" id="gJe-Eh-Of5"/>
+                            <constraint firstItem="U8D-Kn-Au6" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="i9V-nZ-6Y4"/>
+                            <constraint firstAttribute="bottom" secondItem="7cC-FF-7BU" secondAttribute="bottom" id="uyC-ia-DZU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fB4-D4-hAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-497" y="117"/>
+        </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -38,9 +112,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter customer's monthly request code:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-kF-cqK">
-                                <rect key="frame" x="30" y="284" width="315" height="47"/>
+                                <rect key="frame" x="15" y="284" width="345" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="9YF-Vt-8d8"/>
+                                    <constraint firstAttribute="height" constant="47" id="nlP-Z2-YOb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,20 +140,21 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Request Code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lGu-w4-Wpa" customClass="CodeTxtField" customModule="Aerolase_Code_Entry" customModuleProvider="target">
-                                <rect key="frame" x="65" y="351" width="245" height="40"/>
+                                <rect key="frame" x="62.666666666666657" y="351" width="249.99999999999997" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eOL-CP-mNt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="w2h-7w-lv1"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-x3-5Wt">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-x3-5Wt" customClass="SRCopyableLabel" customModule="Aerolase_Code_Entry" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="441" width="375" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="a86-1n-dZb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="62"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -100,44 +175,46 @@
                             <constraint firstAttribute="trailing" secondItem="Qhf-Tz-YNA" secondAttribute="trailing" id="6K2-cD-LAd"/>
                             <constraint firstItem="AVq-x3-5Wt" firstAttribute="top" secondItem="lGu-w4-Wpa" secondAttribute="bottom" constant="50" id="6xc-3f-gmD"/>
                             <constraint firstItem="J2Q-cZ-eHG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWo-dW-W6C"/>
+                            <constraint firstItem="8Pz-kF-cqK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CoS-lm-Dlo"/>
                             <constraint firstAttribute="trailing" secondItem="AVq-x3-5Wt" secondAttribute="trailing" id="Dxc-4U-P9O"/>
                             <constraint firstItem="ccr-gb-yCE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="JAk-PS-hKZ"/>
                             <constraint firstAttribute="bottom" secondItem="Qhf-Tz-YNA" secondAttribute="bottom" id="JeC-U1-51C"/>
-                            <constraint firstItem="lGu-w4-Wpa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="65" id="Jy0-d0-VRT"/>
-                            <constraint firstItem="8Pz-kF-cqK" firstAttribute="top" secondItem="R0E-M5-Dnf" secondAttribute="bottom" constant="17" id="Kc4-h3-UdP"/>
                             <constraint firstItem="ccr-gb-yCE" firstAttribute="top" secondItem="hTg-1P-XJ8" secondAttribute="bottom" constant="5" id="Kmd-EC-nyv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J2Q-cZ-eHG" secondAttribute="trailing" id="Lhw-Vq-9Bp"/>
-                            <constraint firstAttribute="trailing" secondItem="8Pz-kF-cqK" secondAttribute="trailing" constant="30" id="M0P-s6-Sbz"/>
                             <constraint firstItem="BlJ-vf-cG2" firstAttribute="top" secondItem="Wt2-ps-N0C" secondAttribute="bottom" id="M6F-sR-78T"/>
                             <constraint firstItem="R0E-M5-Dnf" firstAttribute="top" secondItem="ccr-gb-yCE" secondAttribute="bottom" constant="15" id="OBd-bM-zHT"/>
-                            <constraint firstItem="lGu-w4-Wpa" firstAttribute="top" secondItem="8Pz-kF-cqK" secondAttribute="bottom" constant="20" id="P0p-Ki-eUm"/>
                             <constraint firstItem="Wt2-ps-N0C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TD5-u5-UPd"/>
                             <constraint firstItem="Wt2-ps-N0C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WKJ-l6-HjT"/>
                             <constraint firstItem="J2Q-cZ-eHG" firstAttribute="top" secondItem="AVq-x3-5Wt" secondAttribute="bottom" constant="5" id="Yz4-0u-Pqz"/>
                             <constraint firstItem="AVq-x3-5Wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z0p-81-ABc"/>
-                            <constraint firstAttribute="trailing" secondItem="lGu-w4-Wpa" secondAttribute="trailing" constant="65" id="a2B-i5-b4y"/>
+                            <constraint firstItem="8Pz-kF-cqK" firstAttribute="top" secondItem="R0E-M5-Dnf" secondAttribute="bottom" constant="17" id="doB-gj-MNP"/>
+                            <constraint firstItem="8Pz-kF-cqK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="esk-2o-WPX"/>
                             <constraint firstAttribute="trailing" secondItem="R0E-M5-Dnf" secondAttribute="trailing" id="gQd-2C-cEE"/>
                             <constraint firstItem="Qhf-Tz-YNA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hhZ-rD-ihc"/>
-                            <constraint firstItem="8Pz-kF-cqK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="hob-xQ-6ej"/>
                             <constraint firstAttribute="trailing" secondItem="ccr-gb-yCE" secondAttribute="trailing" constant="25" id="iYh-HU-d9d"/>
                             <constraint firstItem="R0E-M5-Dnf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jFj-fG-TCj"/>
+                            <constraint firstAttribute="trailing" secondItem="8Pz-kF-cqK" secondAttribute="trailing" constant="15" id="kPD-Ai-r3q"/>
                             <constraint firstItem="ccr-gb-yCE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="opV-WI-bq9"/>
                             <constraint firstItem="Qhf-Tz-YNA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="txy-Zi-xdL"/>
+                            <constraint firstItem="lGu-w4-Wpa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vda-YX-Rkx"/>
+                            <constraint firstItem="lGu-w4-Wpa" firstAttribute="top" secondItem="8Pz-kF-cqK" secondAttribute="bottom" constant="20" id="z2L-jH-rxo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jR6-ed-pQX"/>
                     <connections>
                         <outlet property="requestTxt" destination="lGu-w4-Wpa" id="FYF-VV-LtL"/>
                         <outlet property="responseLbl" destination="J2Q-cZ-eHG" id="jUr-7o-PSC"/>
-                        <outlet property="responseTxt" destination="AVq-x3-5Wt" id="K3z-vI-OJW"/>
+                        <outlet property="responseTxt" destination="AVq-x3-5Wt" id="MUq-ZX-sUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.22660098522168"/>
+            <point key="canvasLocation" x="331.5" y="118"/>
         </scene>
     </scenes>
     <resources>
         <image name="Webinar-Background" width="2550" height="3300"/>
         <image name="aerolase" width="2128" height="748"/>
+        <image name="loginbackground" width="1125" height="2436"/>
     </resources>
 </document>
