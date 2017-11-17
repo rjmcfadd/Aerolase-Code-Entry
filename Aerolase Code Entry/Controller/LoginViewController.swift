@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import LocalAuthentication
 
 
 class LoginViewController: UIViewController {
@@ -36,6 +37,33 @@ class LoginViewController: UIViewController {
             let okAction = UIAlertAction(title: "Try again", style: .default)
             alertView.addAction(okAction)
             present(alertView, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func authenticateTapped(_ sender: Any) {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself!"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                [unowned self] (success, authenticationError) in
+                
+                DispatchQueue.main.async {
+                    if success {
+                        self.performSegue(withIdentifier: "dismissLogin", sender: self)
+                    } else {
+                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
+                    }
+                }
+            }
+        } else {
+            let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
         }
     }
     
