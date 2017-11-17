@@ -21,25 +21,35 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            let genBtn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60))
+            genBtn.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            genBtn.setTitle("Generate", for: .normal)
+            genBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            genBtn.addTarget(self, action: #selector(MainVC.generate), for: .touchUpInside)
+            
+            requestTxt.inputAccessoryView = genBtn
+            
+            responseTxt.isHidden = true
+            responseLbl.isHidden = true
+        }
+
         
-        let genBtn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60))
-        genBtn.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        genBtn.setTitle("Generate", for: .normal)
-        genBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        genBtn.addTarget(self, action: #selector(MainVC.generate), for: .touchUpInside)
-        
-        requestTxt.inputAccessoryView = genBtn
-        
-        responseTxt.isHidden = true
-        responseLbl.isHidden = true
         
         
-        
-    }
+    
 
     
     @objc func generate() {
         if let requestTxt = requestTxt.text {
+            
+            if requestTxt.count < 6 {
+                let alertView = UIAlertController(title: "Request Code Error",
+                                                  message: "Request Code Needs to be 6 Digits",
+                                                  preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Try again", style: .default)
+                alertView.addAction(okAction)
+                present(alertView, animated: true, completion: nil)
+            } else {
             
 //            if let request = Int(requestTxt) {
 //                let newRequest = String(request)
@@ -47,7 +57,7 @@ class MainVC: UIViewController {
                 codeArray.swapAt(3, 1)
                 codeArray.swapAt(3, 2)
                 codeArray.swapAt(4, 3)
-                
+            
                 var elements = codeArray
                 for (i, digit) in elements.enumerated() {
                     if digit == "1" {
@@ -71,7 +81,7 @@ class MainVC: UIViewController {
                     } else if digit == "0" {
                         elements[i] = "0"
                     }
-                    
+                
                 }
                 
                 var codeString = ""
@@ -83,6 +93,7 @@ class MainVC: UIViewController {
                 responseTxt.text = "\(Code.getRequest(forCode: codeString))"
                 
 //            }
+        }
         }
     }
     
