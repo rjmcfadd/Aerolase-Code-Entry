@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbackground" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-FF-7BU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbackground" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-FF-7BU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aerolase Code Entry Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-EN-T9P">
@@ -62,10 +62,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mK-x3-tfP">
-                                <rect key="frame" x="91" y="431" width="193" height="70"/>
+                                <rect key="frame" x="87.666666666666686" y="431" width="200" height="70"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="m7l-N9-Mht"/>
+                                    <constraint firstAttribute="width" constant="200" id="yvt-WW-UNU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="31"/>
                                 <state key="normal" title="Login">
@@ -76,7 +77,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="dismissLogin" id="yC0-kz-hlR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6C-n2-Ddv">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6C-n2-Ddv">
                                 <rect key="frame" x="138.33333333333334" y="551" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="7Zg-rd-pnH"/>
@@ -94,15 +95,14 @@
                             <constraint firstItem="z3F-EN-T9P" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leading" constant="50" id="4Ik-7E-Dln"/>
                             <constraint firstAttribute="trailing" secondItem="7cC-FF-7BU" secondAttribute="trailing" id="50N-sD-xgf"/>
                             <constraint firstItem="L6C-n2-Ddv" firstAttribute="top" secondItem="0mK-x3-tfP" secondAttribute="bottom" constant="50" id="Dq8-mH-mmp"/>
+                            <constraint firstItem="0mK-x3-tfP" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="ENa-LQ-CLP"/>
                             <constraint firstItem="0mK-x3-tfP" firstAttribute="top" secondItem="FvD-lG-l6Z" secondAttribute="bottom" constant="50" id="Fme-Eh-O6v"/>
                             <constraint firstItem="FvD-lG-l6Z" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="Jr0-eX-7Nd"/>
                             <constraint firstItem="z3F-EN-T9P" firstAttribute="top" secondItem="o6N-tk-ieu" secondAttribute="top" constant="50" id="KgE-nQ-bx8"/>
-                            <constraint firstItem="0mK-x3-tfP" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leadingMargin" constant="75" id="OIl-o8-Dqq"/>
                             <constraint firstItem="FvD-lG-l6Z" firstAttribute="top" secondItem="z3F-EN-T9P" secondAttribute="bottom" constant="50" id="Tgs-tp-CgK"/>
                             <constraint firstAttribute="trailing" secondItem="z3F-EN-T9P" secondAttribute="trailing" constant="50" id="ehi-Tr-Xz8"/>
                             <constraint firstItem="7cC-FF-7BU" firstAttribute="top" secondItem="o6N-tk-ieu" secondAttribute="top" id="fEJ-Ki-Sn2"/>
                             <constraint firstItem="7cC-FF-7BU" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leading" id="gJe-Eh-Of5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0mK-x3-tfP" secondAttribute="trailing" constant="75" id="tGK-hp-cyn"/>
                             <constraint firstAttribute="bottom" secondItem="7cC-FF-7BU" secondAttribute="bottom" id="uyC-ia-DZU"/>
                             <constraint firstItem="z3F-EN-T9P" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="yN5-LH-qng"/>
                         </constraints>
