@@ -76,24 +76,11 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="dismissLogin" id="yC0-kz-hlR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6C-n2-Ddv">
-                                <rect key="frame" x="138.33333333333334" y="551" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7Zg-rd-pnH"/>
-                                    <constraint firstAttribute="height" constant="100" id="E95-aY-l1P"/>
-                                </constraints>
-                                <state key="normal" image="icons8-face-id-50"/>
-                                <connections>
-                                    <action selector="authenticateTapped:" destination="TuL-lz-yEk" eventType="touchUpInside" id="3zf-GB-vMi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L6C-n2-Ddv" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="1xZ-Fn-QTZ"/>
                             <constraint firstItem="z3F-EN-T9P" firstAttribute="leading" secondItem="o6N-tk-ieu" secondAttribute="leading" constant="50" id="4Ik-7E-Dln"/>
                             <constraint firstAttribute="trailing" secondItem="7cC-FF-7BU" secondAttribute="trailing" id="50N-sD-xgf"/>
-                            <constraint firstItem="L6C-n2-Ddv" firstAttribute="top" secondItem="0mK-x3-tfP" secondAttribute="bottom" constant="50" id="Dq8-mH-mmp"/>
                             <constraint firstItem="0mK-x3-tfP" firstAttribute="top" secondItem="FvD-lG-l6Z" secondAttribute="bottom" constant="50" id="Fme-Eh-O6v"/>
                             <constraint firstItem="FvD-lG-l6Z" firstAttribute="centerX" secondItem="o6N-tk-ieu" secondAttribute="centerX" id="Jr0-eX-7Nd"/>
                             <constraint firstItem="z3F-EN-T9P" firstAttribute="top" secondItem="o6N-tk-ieu" secondAttribute="top" constant="50" id="KgE-nQ-bx8"/>
@@ -241,7 +228,6 @@
     <resources>
         <image name="Webinar-Background" width="2550" height="3300"/>
         <image name="aerolase" width="2128" height="748"/>
-        <image name="icons8-face-id-50" width="341" height="341"/>
         <image name="loginbackground" width="1125" height="2436"/>
     </resources>
 </document>
