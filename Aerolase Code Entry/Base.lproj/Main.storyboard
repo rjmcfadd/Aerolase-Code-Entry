@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FvD-lG-l6Z">
-                                <rect key="frame" x="100.33333333333331" y="305" width="175" height="76"/>
+                                <rect key="frame" x="100" y="305" width="175" height="76"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TuM-dn-zXE" customClass="CodeTxtField" customModule="Aerolase_Code_Entry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="33"/>

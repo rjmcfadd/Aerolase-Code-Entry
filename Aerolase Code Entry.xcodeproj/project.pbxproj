@@ -12,6 +12,9 @@
 		9492EAEE1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAED1FB4F6A800170A59 /* Aerolase_Code_EntryTests.swift */; };
 		9492EAF71FB4F6EA00170A59 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAF61FB4F6EA00170A59 /* Code.swift */; };
 		9492EAF81FB4F8DF00170A59 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492EAF61FB4F6EA00170A59 /* Code.swift */; };
+		94930FB31FD1E7F900AE6F10 /* Aerolase Code Entry.app in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5DB1FAB667E00C87302 /* Aerolase Code Entry.app */; };
+		94930FB41FD1E80100AE6F10 /* Aerolase Code EntryTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 9492EAEB1FB4F6A800170A59 /* Aerolase Code EntryTests.xctest */; };
+		94930FB51FD1E80100AE6F10 /* Aerolase Code EntryTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 9492EAEB1FB4F6A800170A59 /* Aerolase Code EntryTests.xctest */; };
 		949AB5DF1FAB667E00C87302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5DE1FAB667E00C87302 /* AppDelegate.swift */; };
 		949AB5E11FAB667E00C87302 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AB5E01FAB667E00C87302 /* MainVC.swift */; };
 		949AB5E41FAB667E00C87302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949AB5E21FAB667E00C87302 /* Main.storyboard */; };
@@ -216,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94930FB51FD1E80100AE6F10 /* Aerolase Code EntryTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +230,8 @@
 				949AB5E91FAB667E00C87302 /* LaunchScreen.storyboard in Resources */,
 				949AB5E61FAB667E00C87302 /* Assets.xcassets in Resources */,
 				949AB5E41FAB667E00C87302 /* Main.storyboard in Resources */,
+				94930FB31FD1E7F900AE6F10 /* Aerolase Code Entry.app in Resources */,
+				94930FB41FD1E80100AE6F10 /* Aerolase Code EntryTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
