@@ -11,17 +11,33 @@ import CoreData
 import LocalAuthentication
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let usernameKey = "aerolase"
     let passwordKey = "Neo1064nm"
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginBtn.layer.cornerRadius = 8
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
 
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == usernameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        return true
     }
 
     @IBAction func loginAction(_ sender: Any) {

@@ -12,14 +12,14 @@ import UIKit
 class MainVC: UIViewController {
 
     @IBOutlet weak var requestTxt: UITextField!
-    
     @IBOutlet weak var responseTxt: SRCopyableLabel!
-    
     @IBOutlet weak var responseLbl: UILabel!
-    
+    @IBOutlet weak var purchaseCodeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            purchaseCodeBtn.layer.cornerRadius = 8
         
             let genBtn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60))
             genBtn.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
@@ -42,7 +42,7 @@ class MainVC: UIViewController {
     @objc func generate() {
         if let requestTxt = requestTxt.text {
             
-            if requestTxt.count < 6 {
+            if requestTxt.count != 6 {
                 let alertView = UIAlertController(title: "Request Code Error",
                                                   message: "Request Code Needs to be 6 Digits",
                                                   preferredStyle: .alert)
