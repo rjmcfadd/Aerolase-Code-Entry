@@ -26,7 +26,87 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginBtn.layer.cornerRadius = 8
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        
+     
+        if UserDefaults.standard.object(forKey: "SignedIn") != nil{
+            
+            let context:LAContext = LAContext()
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil){
+                context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Login with TouchID", reply: { (wasCorrect, error) in
+                    if wasCorrect
+                    {
+                        self.performSegue(withIdentifier: "dismissLogin", sender: self)
+                    }
+                    else {
+                        func errorMessageForFails(errorCode: Int) -> String {
+                            
+                            var message = ""
+                            
+                            switch errorCode {
+                            case LAError.authenticationFailed.rawValue:
+                                message = "Authentication was not successful, because user failed to provide valid credentials"
+                                
+                            case LAError.appCancel.rawValue:
+                                message = "Authentication was canceled by application"
+                                
+                            case LAError.invalidContext.rawValue:
+                                message = "LAContext passed to this call has been previously invalidated"
+                                
+                            case LAError.notInteractive.rawValue:
+                                message = "Authentication failed, because it would require showing UI which has been forbidden by using interactionNotAllowed property"
+                                
+                            case LAError.passcodeNotSet.rawValue:
+                                message = "Authentication could not start, because passcode is not set on the device"
+                                
+                            case LAError.systemCancel.rawValue:
+                                message = "Authentication was canceled by system"
+                                
+                            case LAError.userCancel.rawValue:
+                                message = "Authentication was canceled by user"
+                                
+                            case LAError.userFallback.rawValue:
+                                message = "Authentication was canceled, because the user tapped the fallback button"
+                                
+                            case LAError.biometryNotAvailable.rawValue:
+                                message = "Authentication could not start, because biometry is not available on the device"
+                                
+                            case LAError.biometryLockout.rawValue:
+                                message = "Authentication was not successful, because there were too many failed biometry attempts and                          biometry is now locked"
+                                
+                            case LAError.biometryNotEnrolled.rawValue:
+                                message = "Authentication could not start, because biometric authentication is not enrolled"
+                                
+                            default:
+                                message = errorMessageForFailsDeprecatediniOS11(errorCode: errorCode)
+                            }
+                            
+                            return message
+                        }
+                        func errorMessageForFailsDeprecatediniOS11(errorCode: Int) -> String {
+                            var message = ""
+                            if #available(iOS 11.0, macOS 10.13, *) {
+                                message = "unknown error"
+                            } else {
+                                switch errorCode {
+                                case LAError.touchIDLockout.rawValue:
+                                    message = "Authentication was not successful, because there were too many failed Touch ID attempts and Touch ID is now locked. Passcode is required to unlock Touch ID"
+                                    
+                                case LAError.touchIDNotAvailable.rawValue:
+                                    message = "Authentication could not start, because Touch ID is not available on the device"
+                                    
+                                case LAError.touchIDNotEnrolled.rawValue:
+                                    message = "Authentication could not start, because Touch ID is not enrolled on the device"
+                                default :
+                                    message = "unknown error"
+                                }
+                            }
+                            
+                            return message
+                        }
+                    }
+                })
+            }
+        }
 
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -41,11 +121,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginAction(_ sender: Any) {
-        func checkLogin(username: String, password: String) -> Bool {
+        
+         func checkLogin(username: String, password: String) -> Bool {
             return username == usernameKey && password == passwordKey
         }
         if checkLogin(username: usernameTextField.text!, password: passwordTextField.text!) {
             performSegue(withIdentifier: "dismissLogin", sender: self)
+            UserDefaults.standard.set("Yes", forKey: "SignedIn")
         } else {
             let alertView = UIAlertController(title: "Login Problem",
                                               message: "Do you work for Aerolase?",
@@ -54,35 +136,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             alertView.addAction(okAction)
             present(alertView, animated: true, completion: nil)
         }
+    
     }
-    
-//    @IBAction func authenticateTapped(_ sender: Any) {
-//        let context = LAContext()
-//        var error: NSError?
-//        
-//        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-//            let reason = "Identify yourself!"
-//            
-//            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-//                [unowned self] (success, authenticationError) in
-//                
-//                DispatchQueue.main.async {
-//                    if success {
-//                        self.performSegue(withIdentifier: "dismissLogin", sender: self)
-//                    } else {
-//                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
-//                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//                        self.present(ac, animated: true)
-//                    }
-//                }
-//            }
-//        } else {
-//            let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
-//            ac.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(ac, animated: true)
-//        }
-//    }
-    
     
 }
 
