@@ -26,7 +26,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginBtn.layer.cornerRadius = 8
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-     
+ 
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            
+            if textField == usernameTextField {
+                textField.resignFirstResponder()
+                passwordTextField.becomeFirstResponder()
+            } else if textField == passwordTextField {
+                textField.resignFirstResponder()
+            }
+            return true
+        }
+        
         if UserDefaults.standard.object(forKey: "SignedIn") != nil{
             
             let context:LAContext = LAContext()
@@ -35,7 +46,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Login with TouchID", reply: { (wasCorrect, error) in
                     if wasCorrect
                     {
-                        self.performSegue(withIdentifier: "dismissLogin", sender: self)
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "codeEntry", sender: self.navigationController)
+                        }                        
                     }
                     else {
                         func errorMessageForFails(errorCode: Int) -> String {
@@ -108,16 +121,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
 
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == usernameTextField {
-            textField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
-            textField.resignFirstResponder()
-        }
-        return true
     }
 
     @IBAction func loginAction(_ sender: Any) {

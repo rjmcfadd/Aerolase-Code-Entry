@@ -66,7 +66,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="TuL-lz-yEk" eventType="touchUpInside" id="PG4-ND-GM1"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="dismissLogin" id="yC0-kz-hlR"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="dismissLogin" action="showViewController:sender:" id="yC0-kz-hlR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aerolase code entry login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mq-EF-IZD">
@@ -97,16 +97,17 @@
                         <outlet property="loginBtn" destination="0mK-x3-tfP" id="jIr-Nn-Z2g"/>
                         <outlet property="passwordTextField" destination="eVc-Fr-92Q" id="6R2-be-84g"/>
                         <outlet property="usernameTextField" destination="TuM-dn-zXE" id="Mvd-Vy-lkR"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="codeEntry" id="GMV-rg-sKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB4-D4-hAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-498.39999999999998" y="116.49175412293854"/>
         </scene>
-        <!--MainVC-->
+        <!--mainView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Aerolase_Code_Entry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="mainView" id="BYZ-38-t0r" customClass="MainVC" customModule="Aerolase_Code_Entry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hTg-1P-XJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="BlJ-vf-cG2"/>
@@ -188,7 +189,9 @@
                                     <color key="titleColor" red="0.97822810913705582" green="0.61098413688579678" blue="0.35434566556542774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VGK-qA-WTs" kind="show" id="B71-tN-U06"/>
+                                    <segue destination="VGK-qA-WTs" kind="popoverPresentation" popoverAnchorView="ZB4-sV-TPf" id="B71-tN-U06">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -246,7 +249,7 @@
         <!--PurchaseVC-->
         <scene sceneID="86d-kO-LDv">
             <objects>
-                <viewController id="VGK-qA-WTs" customClass="PurchaseVC" customModule="Aerolase_Code_Entry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PurchaseVC" id="VGK-qA-WTs" customClass="PurchaseVC" customModule="Aerolase_Code_Entry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="obx-vX-9GJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Nh2-Ww-f06"/>
@@ -300,7 +303,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Dbt-z4-i8I"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Dbt-z4-i8I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qug-k1-dkG" customClass="SRCopyableLabel" customModule="Aerolase_Code_Entry" customModuleProvider="target">
@@ -370,6 +373,6 @@
         <image name="loginbackground" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dbt-z4-i8I"/>
+        <segue reference="GMV-rg-sKf"/>
     </inferredMetricsTieBreakers>
 </document>

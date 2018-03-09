@@ -33,11 +33,6 @@ class MainVC: UIViewController {
             responseLbl.isHidden = true
         }
 
-        
-        
-        
-    
-
     
     @objc func generate() {
         if let requestTxt = requestTxt.text {
